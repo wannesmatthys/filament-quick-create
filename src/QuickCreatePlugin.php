@@ -106,7 +106,7 @@ class QuickCreatePlugin implements Plugin
                         'icon' => $resource->getNavigationIcon(),
                         'action_name' => $actionName,
                         'action' => ! $resource->hasPage('create') ? 'mountAction(\'' . $actionName . '\')' : null,
-                        'url' => $resource->hasPage('create') ? $resource::getUrl('create') : null,
+                        'url' => $resource->hasPage('create') ? $resource::getUrl('create', ['tenant' => Filament::getTenant()]) : null,
                         'navigation' => $resource->getNavigationSort(),
                     ];
                 }
